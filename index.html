@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Il mio sito</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            z-index: 10;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* MENU */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00c3ff;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("https://images.unsplash.com/photo-1497366754035-f200968a6e72")
+                center/cover no-repeat;
+
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        /* BOTTONE */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+
+            background: #00a8e8;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 5px;
+
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0086ba;
+            transform: translateY(-2px);
+        }
+
+        /* SEZIONE */
+        .about {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            IL MIO SITO
+        </div>
+
+        <!-- MENU PRINCIPALE -->
+        <nav>
+            <ul>
+                <li><a href="cinema.html">Cinema</a></li>
+                <li><a href="letteratura.html">Letteratura</a></li>
+                <li><a href="musica.html">Musica</a></li>
+                <li><a href="viaggi.html">Viaggi</a></li>
+                <li><a href="arte.html">Arte</a></li>
+                <li><a href="chi-sono.html">Chi sono</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGINA PRINCIPALE -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Benvenuto</h1>
+
+            <p>
+                Cinema, letteratura, musica, viaggi e arte.
+                Un luogo dove condividere passioni, idee e storie.
+            </p>
+
+            <a href="chi-sono.html" class="btn">
+                Scopri chi sono
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEZIONE INTRODUTTIVA -->
+    <section class="about">
+
+        <h2>Esplora il sito</h2>
+
+        <p>
+            Attraverso il menu puoi navigare tra le diverse sezioni
+            del sito e scoprire contenuti dedicati al cinema,
+            alla letteratura, alla musica, ai viaggi e all'arte.
+        </p>
+
+    </section>
+
+</body>
+</html>
