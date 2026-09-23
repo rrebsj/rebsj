@@ -121,14 +121,17 @@
 
         .category {
             display: flex;
-            flex-direction: column;
-            gap: 0;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            padding: 24px;
             color: var(--black);
             text-decoration: none;
+            border: 3px solid var(--black);
+            transition: color 0.25s ease, background-color 0.25s ease;
         }
 
         .category h2 {
-            min-height: 52px;
             font-size: 2.8rem;
             line-height: 1;
             text-align: center;
@@ -136,18 +139,9 @@
             letter-spacing: -1px;
         }
 
-        .category img {
-            display: block;
-            width: 294px;
-            height: 294px;
-            object-fit: cover;
-            background: #eee7dc;
-            transition: transform 0.25s ease, filter 0.25s ease;
-        }
-
-        .category:hover img {
-            filter: brightness(0.82);
-            transform: scale(1.025);
+        .category:hover {
+            color: var(--sand);
+            background: var(--brown);
         }
 
         .category:focus-visible,
@@ -208,12 +202,6 @@
             .category h2 {
                 font-size: 2.35rem;
             }
-
-            .category img {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 1;
-            }
         }
     </style>
 </head>
@@ -231,41 +219,20 @@
             <li><a href="musica.html">Musica</a></li>
             <li><a href="viaggi.html">Viaggi</a></li>
             <li><a href="arte.html">Arte</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
             <li><a href="chi-sono.html">Chi sono</a></li>
         </ul>
     </nav>
 
     <main class="page">
         <section class="category-grid" aria-label="Sezioni del sito">
-            <a class="category" href="cinema.html">
-                <h2>Cinema</h2>
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80" alt="Una sala cinematografica">
-            </a>
-
-            <a class="category" href="letteratura.html">
-                <h2>Letteratura</h2>
-                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80" alt="Un libro aperto">
-            </a>
-
-            <a class="category" href="musica.html">
-                <h2>Musica</h2>
-                <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=600&q=80" alt="Un musicista sul palco">
-            </a>
-
-            <a class="category" href="viaggi.html">
-                <h2>Viaggi</h2>
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80" alt="Un edificio storico in una città europea">
-            </a>
-
-            <a class="category" href="arte.html">
-                <h2>Arte</h2>
-                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80" alt="Una scultura classica">
-            </a>
-
-            <a class="category" href="chi-sono.html">
-                <h2>Chi sono</h2>
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Ritratto di una persona">
-            </a>
+            <a class="category" href="cinema.html"><h2>Cinema</h2></a>
+            <a class="category" href="letteratura.html"><h2>Letteratura</h2></a>
+            <a class="category" href="musica.html"><h2>Musica</h2></a>
+            <a class="category" href="viaggi.html"><h2>Viaggi</h2></a>
+            <a class="category" href="arte.html"><h2>Arte</h2></a>
+            <a class="category" href="podcast.html"><h2>Podcast</h2></a>
+            <a class="category" href="chi-sono.html"><h2>Chi sono</h2></a>
         </section>
     </main>
 
