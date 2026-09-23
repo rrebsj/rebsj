@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOP 10 ALBUM DEL <3</title>
+    <title>TOP 10 ALBUM DEL &lt;3</title>
     <style>
         :root {
             --sand: #cbb58f;
             --black: #080808;
             --brown: #4c3525;
+            --card: rgba(255, 255, 255, 0.12);
         }
 
         * {
@@ -26,13 +27,13 @@
         }
 
         .page {
-            width: min(100%, 980px);
+            width: min(100%, 1100px);
             margin: 0 auto;
         }
 
         .back-link {
             display: inline-block;
-            margin-bottom: 52px;
+            margin-bottom: 46px;
             color: var(--black);
             font-weight: bold;
             text-decoration: none;
@@ -44,28 +45,66 @@
 
         h1 {
             margin-bottom: 32px;
-            font-size: clamp(2rem, 5vw, 4rem);
-            line-height: 1.1;
+            font-size: clamp(2rem, 4vw, 4rem);
+            line-height: 1.05;
             text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
-        .album-list {
+        .album-grid {
             display: grid;
-            gap: 12px;
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
+            gap: 22px;
             list-style: none;
         }
 
-        .album-list li {
-            padding: 18px 20px;
+        .album-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 170px;
+            padding: 22px 20px;
             border: 3px solid var(--black);
-            background: rgba(255, 255, 255, 0.12);
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.45;
+            background: var(--card);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .album-card:hover {
+            background: rgba(76, 53, 37, 0.85);
+            color: var(--sand);
+            transform: translateY(-2px);
+        }
+
+        .album-number {
+            font-size: 0.82rem;
+            font-weight: bold;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .album-title {
+            margin-top: 12px;
+            font-size: clamp(1.35rem, 2vw, 2.1rem);
+            line-height: 1.1;
+            text-transform: none;
+        }
+
+        .album-meta {
+            margin-top: 16px;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.02em;
         }
 
         a:focus-visible {
             outline: 4px solid white;
             outline-offset: 5px;
+        }
+
+        @media (max-width: 760px) {
+            .album-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
@@ -74,11 +113,12 @@
             }
 
             .back-link {
-                margin-bottom: 38px;
+                margin-bottom: 32px;
             }
 
-            .album-list li {
-                padding: 15px;
+            .album-card {
+                min-height: 150px;
+                padding: 18px 16px;
             }
         }
     </style>
@@ -88,18 +128,78 @@
         <a class="back-link" href="index.html">← Torna alla home</a>
         <h1>TOP 10 ALBUM DEL &lt;3</h1>
 
-        <ol class="album-list">
-            <li>Storia di un impiegato - Fabrizio De André (1973)</li>
-            <li>The Velvet Underground &amp; Nico - The Velvet Underground &amp; Nico (1967)</li>
-            <li>Revolver - The Beatles (1966)</li>
-            <li>Songs of Leonard Cohen - Leonard Cohen (1967)</li>
-            <li>A Love Supreme - John Coltrane (1965)</li>
-            <li>La buona novella - Fabrizio De André (1970)</li>
-            <li>Non al denaro non all'amore né al cielo - Fabrizio De André (1971)</li>
-            <li>Andate tutti affanculo - The Zen Circus (2009)</li>
-            <li>La voce del padrone - Franco Battiato (1981)</li>
-            <li>Paolo Conte - Paolo Conte (1984)</li>
-        </ol>
+        <ul class="album-grid">
+            <li class="album-card">
+                <span class="album-number">01</span>
+                <div>
+                    <div class="album-title">Storia di un impiegato</div>
+                    <div class="album-meta">Fabrizio De André · 1973</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">02</span>
+                <div>
+                    <div class="album-title">The Velvet Underground &amp; Nico</div>
+                    <div class="album-meta">The Velvet Underground &amp; Nico · 1967</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">03</span>
+                <div>
+                    <div class="album-title">Revolver</div>
+                    <div class="album-meta">The Beatles · 1966</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">04</span>
+                <div>
+                    <div class="album-title">Songs of Leonard Cohen</div>
+                    <div class="album-meta">Leonard Cohen · 1967</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">05</span>
+                <div>
+                    <div class="album-title">A Love Supreme</div>
+                    <div class="album-meta">John Coltrane · 1965</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">06</span>
+                <div>
+                    <div class="album-title">La buona novella</div>
+                    <div class="album-meta">Fabrizio De André · 1970</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">07</span>
+                <div>
+                    <div class="album-title">Non al denaro non all'amore né al cielo</div>
+                    <div class="album-meta">Fabrizio De André · 1971</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">08</span>
+                <div>
+                    <div class="album-title">Andate tutti affanculo</div>
+                    <div class="album-meta">The Zen Circus · 2009</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">09</span>
+                <div>
+                    <div class="album-title">La voce del padrone</div>
+                    <div class="album-meta">Franco Battiato · 1981</div>
+                </div>
+            </li>
+            <li class="album-card">
+                <span class="album-number">10</span>
+                <div>
+                    <div class="album-title">Paolo Conte</div>
+                    <div class="album-meta">Paolo Conte · 1984</div>
+                </div>
+            </li>
+        </ul>
     </main>
 </body>
 </html>
