@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP 10 ALBUM DEL <3</title>
+    <style>
+        :root {
+            --sand: #cbb58f;
+            --black: #080808;
+            --brown: #4c3525;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 48px 24px 72px;
+            background: var(--sand);
+            color: var(--black);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            width: min(100%, 980px);
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 52px;
+            color: var(--black);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--brown);
+        }
+
+        h1 {
+            margin-bottom: 32px;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .album-list {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .album-list li {
+            padding: 18px 20px;
+            border: 3px solid var(--black);
+            background: rgba(255, 255, 255, 0.12);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.45;
+        }
+
+        a:focus-visible {
+            outline: 4px solid white;
+            outline-offset: 5px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 28px 16px 48px;
+            }
+
+            .back-link {
+                margin-bottom: 38px;
+            }
+
+            .album-list li {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="index.html">← Torna alla home</a>
+        <h1>TOP 10 ALBUM DEL &lt;3</h1>
+
+        <ol class="album-list">
+            <li>Storia di un impiegato - Fabrizio De André (1973)</li>
+            <li>The Velvet Underground &amp; Nico - The Velvet Underground &amp; Nico (1967)</li>
+            <li>Revolver - The Beatles (1966)</li>
+            <li>Songs of Leonard Cohen - Leonard Cohen (1967)</li>
+            <li>A Love Supreme - John Coltrane (1965)</li>
+            <li>La buona novella - Fabrizio De André (1970)</li>
+            <li>Non al denaro non all'amore né al cielo - Fabrizio De André (1971)</li>
+            <li>Andate tutti affanculo - The Zen Circus (2009)</li>
+            <li>La voce del padrone - Franco Battiato (1981)</li>
+            <li>Paolo Conte - Paolo Conte (1984)</li>
+        </ol>
+    </main>
+</body>
+</html>
