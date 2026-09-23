@@ -3,139 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questa musica sono io</title>
+    <title>Questa musica sono io | Il mio sito</title>
     <style>
         :root {
-            --sand: #cbb58f;
-            --black: #080808;
-            --brown: #4c3525;
-            --card: rgba(255,255,255,.12);
-            --panel: rgba(255,255,255,.08);
-            --line: rgba(8, 8, 8, 0.25);
+            --paper: #eee6d5;
+            --ink: #17130f;
+            --muted: #665b4d;
+            --line: #17130f;
+            --accent: #8c2f24;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             min-height: 100vh;
-            padding: 48px 24px 72px;
-            background: var(--sand);
-            color: var(--black);
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 30px 20px 70px;
+            background: #cbb58f;
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', serif;
         }
 
         .page {
-            width: min(100%, 1100px);
+            width: min(100%, 1160px);
             margin: 0 auto;
+            padding: 24px clamp(20px, 4vw, 60px) 60px;
+            background: var(--paper);
+            box-shadow: 0 12px 30px rgba(76, 53, 37, .2);
         }
 
         .back-link {
             display: inline-block;
-            margin-bottom: 46px;
-            color: var(--black);
+            margin-bottom: 22px;
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .8rem;
             font-weight: bold;
+            letter-spacing: .08em;
+            text-transform: uppercase;
             text-decoration: none;
         }
 
-        .back-link:hover { color: var(--brown); }
+        .back-link:hover { color: var(--accent); }
 
-        h1 {
-            margin-bottom: 14px;
-            font-size: clamp(2.2rem, 5vw, 4.5rem);
-            line-height: 1;
+        .masthead {
+            padding: 18px 0 14px;
+            border-top: 5px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .masthead-kicker,
+        .article-meta,
+        .section-label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .72rem;
+            font-weight: bold;
+            letter-spacing: .14em;
             text-transform: uppercase;
         }
 
-        .intro {
-            margin-bottom: 34px;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .masthead-kicker { margin-bottom: 8px; color: var(--accent); }
+
+        .masthead h1 {
+            font-size: clamp(3rem, 9vw, 7.5rem);
+            line-height: .82;
+            letter-spacing: -.08em;
+            text-transform: uppercase;
         }
 
-        .subsections {
-            display: grid;
-            gap: 28px;
-            margin-top: 48px;
-        }
-
-        .subsection {
-            border: 3px solid var(--black);
-            background: var(--panel);
-            overflow: hidden;
-        }
-
-        .subsection-header {
+        .masthead-date {
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 18px 22px 14px;
-            border-bottom: 2px solid var(--line);
-            background: rgba(255,255,255,.06);
+            margin-top: 15px;
+            color: var(--muted);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .68rem;
+            font-weight: bold;
+            letter-spacing: .1em;
+            text-transform: uppercase;
         }
 
+        .masthead-date::before,
+        .masthead-date::after {
+            content: '';
+            flex: 1;
+            border-top: 1px solid var(--line);
+        }
+
+        .article-header {
+            max-width: 940px;
+            margin: 48px auto 34px;
+            text-align: center;
+        }
+
+        .section-label { color: var(--accent); }
+
+        .article-header h2 {
+            margin: 12px 0 16px;
+            font-size: clamp(2.4rem, 6vw, 5.5rem);
+            line-height: .95;
+            letter-spacing: -.06em;
+        }
+
+        .article-header .intro {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .rule { border: 0; border-top: 1px solid var(--line); }
+
+        .subsections {
+            display: grid;
+            gap: 0;
+            margin-top: 30px;
+        }
+
+        .subsection {
+            display: grid;
+            grid-template-columns: 72px minmax(0, 1fr);
+            gap: 24px;
+            padding: 34px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .subsection:first-child { border-top: 1px solid var(--line); }
+
         .subsection-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border: 2px solid var(--black);
-            font-size: 0.95rem;
+            color: var(--accent);
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2.7rem;
             font-weight: bold;
             line-height: 1;
         }
 
-        .subsection-header h2 {
-            font-size: clamp(1.15rem, 2.5vw, 2rem);
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 1.2;
+        .subsection-content { min-width: 0; }
+
+        .subsection h3 {
+            margin-bottom: 18px;
+            font-size: clamp(1.7rem, 3.5vw, 3rem);
+            line-height: 1;
+            letter-spacing: -.04em;
         }
 
-        .subsection-body {
+        .subsection-layout {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 20px;
-            padding: 22px;
+            grid-template-columns: minmax(0, 1.05fr) minmax(260px, .95fr);
+            gap: 28px;
+            align-items: start;
         }
 
-        .subsection-body p {
-            font-size: 1.02rem;
+        .subsection-text {
+            columns: 1;
+            font-size: 1.08rem;
             line-height: 1.7;
+        }
+
+        .subsection-text::first-letter {
+            float: left;
+            margin: 5px 8px 0 0;
+            color: var(--accent);
+            font-size: 4.2rem;
+            font-weight: bold;
+            line-height: .7;
         }
 
         .image-row {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
+            gap: 12px;
         }
 
         .image-slot {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 180px;
-            border: 2px dashed rgba(8, 8, 8, 0.5);
-            background: rgba(76,53,37,.08);
-            color: rgba(8, 8, 8, 0.7);
-            font-size: 0.9rem;
+            min-height: 170px;
+            border: 1px dashed var(--muted);
+            background: rgba(140, 47, 36, .06);
+            color: var(--muted);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .68rem;
             font-weight: bold;
-            text-transform: uppercase;
+            letter-spacing: .1em;
             text-align: center;
-            padding: 18px;
+            text-transform: uppercase;
         }
 
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 18px;
             list-style: none;
-            margin-top: 18px;
+            margin-top: 34px;
+            padding-top: 26px;
+            border-top: 4px solid var(--line);
         }
 
         .photo-card {
-            border: 3px solid var(--black);
-            background: var(--card);
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,.2);
         }
 
         .photo-card img {
@@ -143,36 +214,36 @@
             width: 100%;
             aspect-ratio: 1;
             object-fit: cover;
-            background: rgba(76,53,37,.22);
+            background: rgba(76,53,37,.12);
         }
 
         .photo-card figcaption {
-            padding: 15px;
+            padding: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .78rem;
             font-weight: bold;
-            line-height: 1.3;
+            line-height: 1.35;
+            text-transform: uppercase;
         }
 
-        .photo-card:not(:has(img[src])) img {
-            visibility: hidden;
-        }
+        .photo-card:not(:has(img[src])) img { visibility: hidden; }
 
-        a:focus-visible { outline: 4px solid white; outline-offset: 5px; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
         @media (max-width: 760px) {
-            .subsection-body {
-                grid-template-columns: 1fr;
-            }
-
-            .photo-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            body { padding: 0 0 40px; }
+            .page { box-shadow: none; }
+            .subsection-layout { grid-template-columns: 1fr; }
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 480px) {
-            body { padding: 28px 16px 48px; }
-            .back-link { margin-bottom: 34px; }
-            .photo-grid { grid-template-columns: 1fr; }
+            .page { padding: 18px 18px 44px; }
+            .article-header { margin-top: 35px; }
+            .subsection { grid-template-columns: 42px minmax(0, 1fr); gap: 12px; }
+            .subsection-number { font-size: 1.8rem; }
             .image-row { grid-template-columns: 1fr; }
+            .photo-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -180,60 +251,62 @@
     <main class="page">
         <a class="back-link" href="musica.html">← Torna a Musica</a>
 
-        <h1>Questa musica sono io</h1>
-        <p class="intro">
-            Qui puoi aggiungere le immagini e i ricordi musicali che ti rappresentano.
-            Le sezioni qui sotto ti aiutano a organizzare i tuoi momenti preferiti in modo chiaro e personale.
-        </p>
+        <header class="masthead">
+            <p class="masthead-kicker">Archivio personale · Musica</p>
+            <h1>Il rumore</h1>
+            <div class="masthead-date">
+                <span>Questa musica sono io</span>
+                <span>Edizione speciale</span>
+            </div>
+        </header>
 
-        <section class="subsections" aria-label="Sezioni della pagina musicale">
+        <header class="article-header">
+            <p class="section-label">Diario musicale</p>
+            <h2>Questa musica sono io</h2>
+            <p class="intro">Un piccolo viaggio tra ascolti, ricordi e trasformazioni: perché ogni età ha il suo ritmo.</p>
+        </header>
+
+        <hr class="rule">
+
+        <section class="subsections" aria-label="Articolo sulla mia storia musicale">
             <article class="subsection">
-                <div class="subsection-header">
-                    <span class="subsection-number">01</span>
-                    <h2>I primi passi nella musica. 2000-2010</h2>
-                </div>
-                <div class="subsection-body">
-                    <p>
-                        Scrivi qui come è nato il tuo interesse per la musica, quali artisti o generi hai ascoltato nei primi anni,
-                        e come quei ricordi hanno iniziato a diventare parte della tua identità.
-                    </p>
-                    <div class="image-row" aria-label="Immagini future per i primi passi nella musica">
-                        <div class="image-slot">Immagine futura</div>
-                        <div class="image-slot">Immagine futura</div>
+                <div class="subsection-number">01</div>
+                <div class="subsection-content">
+                    <h3>I primi passi nella musica. 2000-2010</h3>
+                    <div class="subsection-layout">
+                        <p class="subsection-text">Scrivi qui come è nato il tuo interesse per la musica, quali artisti o generi hai ascoltato nei primi anni, e come quei ricordi hanno iniziato a diventare parte della tua identità.</p>
+                        <div class="image-row" aria-label="Immagini future per i primi passi nella musica">
+                            <div class="image-slot">Immagine futura</div>
+                            <div class="image-slot">Immagine futura</div>
+                        </div>
                     </div>
                 </div>
             </article>
 
             <article class="subsection">
-                <div class="subsection-header">
-                    <span class="subsection-number">02</span>
-                    <h2>Preadolescenza. Un mix devastante</h2>
-                </div>
-                <div class="subsection-body">
-                    <p>
-                        Racconta questo periodo come una fase di scoperta piena di contrasti, influenze e scelte musicali improvvise,
-                        quando il tuo gusto si mescolava senza filtri e prendeva forma in modo intenso.
-                    </p>
-                    <div class="image-row" aria-label="Immagini future per la preadolescenza">
-                        <div class="image-slot">Immagine futura</div>
-                        <div class="image-slot">Immagine futura</div>
+                <div class="subsection-number">02</div>
+                <div class="subsection-content">
+                    <h3>Preadolescenza. Un mix devastante</h3>
+                    <div class="subsection-layout">
+                        <p class="subsection-text">Racconta questo periodo come una fase di scoperta piena di contrasti, influenze e scelte musicali improvvise, quando il tuo gusto si mescolava senza filtri e prendeva forma in modo intenso.</p>
+                        <div class="image-row" aria-label="Immagini future per la preadolescenza">
+                            <div class="image-slot">Immagine futura</div>
+                            <div class="image-slot">Immagine futura</div>
+                        </div>
                     </div>
                 </div>
             </article>
 
             <article class="subsection">
-                <div class="subsection-header">
-                    <span class="subsection-number">03</span>
-                    <h2>Adolescenza: affinità e divergenze fra musica leggerissima e musica d'autore</h2>
-                </div>
-                <div class="subsection-body">
-                    <p>
-                        Qui puoi raccontare il confronto tra i suoni leggeri e quelli più profondi, tra le influenze popolari e le canzoni
-                        che ti hanno fatto riflettere sul significato della musica e della parola.
-                    </p>
-                    <div class="image-row" aria-label="Immagini future per l'adolescenza musicale">
-                        <div class="image-slot">Immagine futura</div>
-                        <div class="image-slot">Immagine futura</div>
+                <div class="subsection-number">03</div>
+                <div class="subsection-content">
+                    <h3>Adolescenza: affinità e divergenze fra musica leggerissima e musica d'autore</h3>
+                    <div class="subsection-layout">
+                        <p class="subsection-text">Qui puoi raccontare il confronto tra i suoni leggeri e quelli più profondi, tra le influenze popolari e le canzoni che ti hanno fatto riflettere sul significato della musica e della parola.</p>
+                        <div class="image-row" aria-label="Immagini future per l'adolescenza musicale">
+                            <div class="image-slot">Immagine futura</div>
+                            <div class="image-slot">Immagine futura</div>
+                        </div>
                     </div>
                 </div>
             </article>
