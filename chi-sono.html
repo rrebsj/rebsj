@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi sono | Il mio sito</title>
+    <style>
+        :root {
+            --sand: #cbb58f;
+            --black: #080808;
+            --brown: #4c3525;
+            --card: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 48px 24px 72px;
+            background: var(--sand);
+            color: var(--black);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            width: min(100%, 980px);
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 52px;
+            color: var(--black);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--brown);
+        }
+
+        h1 {
+            margin-bottom: 18px;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .intro {
+            max-width: 680px;
+            margin-bottom: 38px;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .social-list {
+            display: grid;
+            gap: 16px;
+            list-style: none;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 22px 24px;
+            border: 3px solid var(--black);
+            background: var(--card);
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: bold;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.2em;
+            min-height: 2.2em;
+            border-radius: 50%;
+            font-size: 1.45em;
+            line-height: 1;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: var(--brown);
+            transform: scale(1.08);
+        }
+
+        .social-link:focus-visible {
+            outline: 4px solid white;
+            outline-offset: 5px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 28px 16px 48px;
+            }
+
+            .back-link {
+                margin-bottom: 38px;
+            }
+
+            .social-item {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="index.html">← Torna alla 🏠</a>
+
+        <h1>Chi sono</h1>
+        <p class="intro">
+            Uno spazio per raccontare i miei interessi e raccogliere i luoghi online in cui puoi trovarmi.
+        </p>
+
+        <ul class="social-list" aria-label="I miei profili social">
+            <li class="social-item">
+                <span>RYM (Rate Your Music)</span>
+                <a class="social-link" href="https://rateyourmusic.com/~rebsj" target="_blank" rel="noopener noreferrer" aria-label="Visita il mio profilo Rate Your Music">🎵</a>
+            </li>
+            <li class="social-item">
+                <span>GoodReads</span>
+                <a class="social-link" href="https://www.goodreads.com/user/show/99707093-rebecca" target="_blank" rel="noopener noreferrer" aria-label="Visita il mio profilo GoodReads">📖</a>
+            </li>
+            <li class="social-item">
+                <span>Letterboxd</span>
+                <a class="social-link" href="https://letterboxd.com/rebsj/" target="_blank" rel="noopener noreferrer" aria-label="Visita il mio profilo Letterboxd">📽️</a>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
