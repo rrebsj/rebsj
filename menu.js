@@ -1,5 +1,6 @@
 (() => {
     const menu = `
+        <a class="site-home-link" href="index.html" aria-label="Torna alla home">🏠</a>
         <button class="site-menu-button" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-menu-panel">
             <span></span><span></span><span></span>
         </button>
@@ -7,10 +8,10 @@
             <ul>
                 <li><a href="letteratura.html">Letteratura</a><ul class="submenu"><li><a href="letteratura.html">I 10 libri che mi hanno formata</a></li></ul></li>
                 <li><a href="musica.html">Musica</a><ul class="submenu"><li><a href="top-10-album.html">TOP 10 ALBUM DEL &lt;3</a></li><li><a href="questa-musica-sono-io.html">Questa musica sono io</a></li></ul></li>
-                <li><a href="podcast.html">PODCAST ASCOLTATI / IN ASCOLTO</a><ul class="submenu"><li><a href="podcast.html">PODCAST ASCOLTATI / IN ASCOLTO</a></li></ul></li>
+                <li><a href="podcast.html">Podcast</a><ul class="submenu"><li><a href="podcast.html">Podcast ascoltati / in ascolto</a></li></ul></li>
                 <li><a href="cinema.html">Cinema</a></li>
                 <li><a href="arte.html">Arte</a></li>
-                <li><a href="chi-sono.html">Chi sono</a></li>
+                <li><a href="chi-sono.html">CONTATTI🐸</a></li>
             </ul>
         </nav>`;
 
