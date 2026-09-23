@@ -3,203 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOP 10 ALBUM DEL &lt;3</title>
+    <title>Musica | Il mio sito</title>
     <style>
-        :root {
-            --sand: #cbb58f;
-            --black: #080808;
-            --brown: #4c3525;
-            --card: rgba(255, 255, 255, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100vh;
-            padding: 48px 24px 72px;
-            background: var(--sand);
-            color: var(--black);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .page {
-            width: min(100%, 1100px);
-            margin: 0 auto;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 46px;
-            color: var(--black);
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .back-link:hover {
-            color: var(--brown);
-        }
-
-        h1 {
-            margin-bottom: 32px;
-            font-size: clamp(2rem, 4vw, 4rem);
-            line-height: 1.05;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .album-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(250px, 1fr));
-            gap: 22px;
-            list-style: none;
-        }
-
-        .album-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 170px;
-            padding: 22px 20px;
-            border: 3px solid var(--black);
-            background: var(--card);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        .album-card:hover {
-            background: rgba(76, 53, 37, 0.85);
-            color: var(--sand);
-            transform: translateY(-2px);
-        }
-
-        .album-number {
-            font-size: 0.82rem;
-            font-weight: bold;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
-
-        .album-title {
-            margin-top: 12px;
-            font-size: clamp(1.35rem, 2vw, 2.1rem);
-            line-height: 1.1;
-            text-transform: none;
-        }
-
-        .album-meta {
-            margin-top: 16px;
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 0.02em;
-        }
-
-        a:focus-visible {
-            outline: 4px solid white;
-            outline-offset: 5px;
-        }
-
-        @media (max-width: 760px) {
-            .album-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 28px 16px 48px;
-            }
-
-            .back-link {
-                margin-bottom: 32px;
-            }
-
-            .album-card {
-                min-height: 150px;
-                padding: 18px 16px;
-            }
-        }
+        :root { --sand: #cbb58f; --black: #080808; --brown: #4c3525; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { min-height: 100vh; padding: 48px 24px 72px; background: var(--sand); color: var(--black); font-family: Arial, Helvetica, sans-serif; }
+        .page { width: min(100%, 980px); margin: 0 auto; }
+        .back-link { display: inline-block; margin-bottom: 52px; color: var(--black); font-weight: bold; text-decoration: none; }
+        .back-link:hover, .music-link:hover { color: var(--sand); background: var(--brown); }
+        h1 { margin-bottom: 32px; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; text-transform: uppercase; }
+        .music-links { display: grid; gap: 20px; list-style: none; }
+        .music-link { display: block; padding: 28px 24px; border: 3px solid var(--black); color: var(--black); font-size: clamp(1.5rem, 4vw, 2.8rem); font-weight: bold; line-height: 1.05; text-decoration: none; transition: color .2s ease, background-color .2s ease, transform .2s ease; }
+        .music-link:hover { transform: translateY(-2px); }
+        a:focus-visible { outline: 4px solid white; outline-offset: 5px; }
+        @media (max-width: 600px) { body { padding: 28px 16px 48px; } .back-link { margin-bottom: 38px; } }
     </style>
 </head>
 <body>
     <main class="page">
         <a class="back-link" href="index.html">← Torna alla home</a>
-        <h1>TOP 10 ALBUM DEL &lt;3</h1>
-
-        <ul class="album-grid">
-            <li class="album-card">
-                <span class="album-number">01</span>
-                <div>
-                    <div class="album-title">Storia di un impiegato</div>
-                    <div class="album-meta">Fabrizio De André · 1973</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">02</span>
-                <div>
-                    <div class="album-title">The Velvet Underground &amp; Nico</div>
-                    <div class="album-meta">The Velvet Underground &amp; Nico · 1967</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">03</span>
-                <div>
-                    <div class="album-title">Revolver</div>
-                    <div class="album-meta">The Beatles · 1966</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">04</span>
-                <div>
-                    <div class="album-title">Songs of Leonard Cohen</div>
-                    <div class="album-meta">Leonard Cohen · 1967</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">05</span>
-                <div>
-                    <div class="album-title">A Love Supreme</div>
-                    <div class="album-meta">John Coltrane · 1965</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">06</span>
-                <div>
-                    <div class="album-title">La buona novella</div>
-                    <div class="album-meta">Fabrizio De André · 1970</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">07</span>
-                <div>
-                    <div class="album-title">Non al denaro non all'amore né al cielo</div>
-                    <div class="album-meta">Fabrizio De André · 1971</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">08</span>
-                <div>
-                    <div class="album-title">Andate tutti affanculo</div>
-                    <div class="album-meta">The Zen Circus · 2009</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">09</span>
-                <div>
-                    <div class="album-title">La voce del padrone</div>
-                    <div class="album-meta">Franco Battiato · 1981</div>
-                </div>
-            </li>
-            <li class="album-card">
-                <span class="album-number">10</span>
-                <div>
-                    <div class="album-title">Paolo Conte</div>
-                    <div class="album-meta">Paolo Conte · 1984</div>
-                </div>
-            </li>
-        </ul>
+        <h1>Musica</h1>
+        <nav aria-label="Sezioni musicali">
+            <ul class="music-links">
+                <li><a class="music-link" href="top-10-album.html">TOP 10 ALBUM DEL &lt;3</a></li>
+                <li><a class="music-link" href="questa-musica-sono-io.html">Questa musica sono io</a></li>
+            </ul>
+        </nav>
     </main>
 </body>
 </html>
