@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte | Il mio sito</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { min-height: 100vh; padding: 48px 24px 72px; background: #cbb58f; color: #080808; font-family: Arial, Helvetica, sans-serif; }
+        .page { width: min(100%, 980px); margin: 0 auto; }
+        .back-link { display: inline-block; margin-bottom: 52px; color: #080808; font-weight: bold; text-decoration: none; }
+        h1 { margin-bottom: 18px; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; text-transform: uppercase; }
+        .placeholder { padding: 28px; border: 3px solid #080808; font-size: 1.15rem; line-height: 1.6; background: rgba(255,255,255,.12); }
+        a:focus-visible { outline: 4px solid white; outline-offset: 5px; }
+        @media (max-width: 600px) { body { padding: 28px 16px 48px; } }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="index.html">← Torna alla home</a>
+        <h1>Arte</h1>
+        <p class="placeholder">Questa sezione è pronta per i tuoi contenuti artistici.</p>
+    </main>
+    <script src="menu.js"></script>
+</body>
+</html>
