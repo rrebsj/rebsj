@@ -12,20 +12,19 @@
         .back-link { display: inline-block; margin-bottom: 46px; color: var(--black); font-weight: bold; text-decoration: none; }
         .back-link:hover { color: var(--brown); }
         h1 { margin-bottom: 32px; font-size: clamp(2rem, 4vw, 4rem); line-height: 1.05; text-transform: uppercase; letter-spacing: -1px; }
-        .album-grid { display: grid; grid-template-columns: repeat(2, minmax(250px, 1fr)); gap: 22px; list-style: none; }
-        .album-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 170px; padding: 22px 20px; border: 3px solid var(--black); background: var(--card); transition: transform .2s ease, background-color .2s ease; }
+        .album-grid { display: grid; grid-template-columns: 1fr; gap: 22px; list-style: none; }
+        .album-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 170px; padding: 22px 20px; border: 3px solid var(--black); background: var(--card); transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; }
         .album-card:hover { background: rgba(76, 53, 37, .85); color: var(--sand); transform: translateY(-2px); }
         .album-number { font-size: .82rem; font-weight: bold; letter-spacing: .18em; text-transform: uppercase; }
         .album-title { margin-top: 12px; font-size: clamp(1.35rem, 2vw, 2.1rem); line-height: 1.1; }
         .album-meta { margin-top: 16px; font-size: 1rem; font-weight: bold; letter-spacing: .02em; }
         a:focus-visible { outline: 4px solid white; outline-offset: 5px; }
-        @media (max-width: 760px) { .album-grid { grid-template-columns: 1fr; } }
         @media (max-width: 600px) { body { padding: 28px 16px 48px; } .back-link { margin-bottom: 32px; } .album-card { min-height: 150px; padding: 18px 16px; } }
     </style>
 </head>
 <body>
     <main class="page">
-        <a class="back-link" href="music.html">← Torna a Musica</a>
+        <a class="back-link" href="musica.html">← Torna a Musica</a>
         <h1>TOP 10 ALBUM DEL &lt;3</h1>
         <ul class="album-grid">
             <li class="album-card"><span class="album-number">01</span><div><div class="album-title">Storia di un impiegato</div><div class="album-meta">Fabrizio De André · 1973</div></div></li>
