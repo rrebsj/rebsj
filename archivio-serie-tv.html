@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivio serie tv | Il mio sito</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        :root { --sand:#cbb58f; --black:#080808; --brown:#4c3525; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { min-height:100vh; padding:48px 24px 72px; background:var(--sand); color:var(--black); font-family:Arial,Helvetica,sans-serif; }
+        .page { width:min(100%,980px); margin:0 auto; }
+        .back-link { display:inline-block; margin-bottom:52px; color:var(--black); font-weight:bold; text-decoration:none; }
+        .back-link:hover { color:var(--sand); background:var(--brown); }
+        h1 { margin-bottom:32px; font-size:clamp(2.5rem,6vw,5rem); line-height:1; text-transform:uppercase; }
+        .placeholder { padding:28px; border:3px solid var(--black); background:rgba(255,255,255,.12); font-size:1.15rem; line-height:1.6; }
+        a:focus-visible { outline:4px solid white; outline-offset:5px; }
+        @media (max-width:600px) { body{padding:28px 16px 48px;} .back-link{margin-bottom:38px;} }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="serie-tv.html">← Torna a Serie TV</a>
+        <h1>Archivio serie tv</h1>
+        <p class="placeholder">Questa sezione è pronta per l'archivio completo delle serie tv.</p>
+    </main>
+    <script src="menu.js"></script>
+</body>
+</html>
