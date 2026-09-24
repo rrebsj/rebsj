@@ -11,13 +11,22 @@
         body { min-height:100vh; padding:48px 24px 72px; background:var(--sand); color:var(--black); font-family:Arial,Helvetica,sans-serif; }
         .page { width:min(100%,980px); margin:0 auto; }
         .back-link { display:inline-block; margin-bottom:52px; color:var(--black); font-weight:bold; text-decoration:none; }
-        .back-link:hover,.book-item:hover { color:var(--sand); background:var(--brown); }
+        .back-link:hover,.book-item:hover,.reading-item:hover { color:var(--sand); background:var(--brown); }
         h1 { margin-bottom:32px; font-size:clamp(2.5rem,6vw,5rem); line-height:1; text-transform:uppercase; }
-        .books { list-style:none; display:grid; gap:16px; }
+        .books { list-style:none; display:grid; gap:16px; margin-bottom:56px; }
         .book-item { display:block; padding:20px 24px; border:3px solid var(--black); color:var(--black); text-decoration:none; transition:transform .2s ease,background-color .2s ease,color .2s ease; }
         .book-item:hover { transform:translateY(-2px); }
         .book-item strong { display:block; margin-bottom:6px; font-size:clamp(1.2rem,2.5vw,2rem); line-height:1.2; }
         .book-item span { font-size:clamp(1rem,1.8vw,1.2rem); line-height:1.5; }
+        .reading-section { margin-top:28px; }
+        .reading-section h2 { margin-bottom:8px; font-size:clamp(2rem,4vw,3rem); line-height:1.1; text-transform:uppercase; }
+        .section-subtitle { margin-bottom:20px; font-size:clamp(1rem,2vw,1.25rem); font-weight:700; }
+        .reading-list { list-style:none; display:grid; gap:16px; }
+        .reading-item { display:block; padding:18px 20px; border:3px solid var(--black); color:var(--black); text-decoration:none; transition:transform .2s ease,background-color .2s ease,color .2s ease; }
+        .reading-item strong { display:block; margin-bottom:4px; font-size:clamp(1.1rem,2vw,1.7rem); line-height:1.35; }
+        .reading-item .meta { font-size:clamp(0.95rem,1.7vw,1.15rem); }
+        .reading-item .rating { display:inline-block; margin-left:8px; font-size:clamp(1rem,1.8vw,1.15rem); }
+        .empty-state { padding:16px 20px; border:3px dashed var(--black); font-weight:700; }
         a:focus-visible { outline:4px solid white; outline-offset:5px; }
         @media (max-width:600px) { body{padding:28px 16px 48px;} .back-link{margin-bottom:38px;} }
     </style>
@@ -25,6 +34,7 @@
 <body>
     <main class="page">
         <a class="back-link" href="index.html">← Torna alla 🏠</a>
+
         <h1>I 10 libri che mi hanno formata</h1>
         <ol class="books" aria-label="I dieci libri che mi hanno formata">
             <li><a class="book-item" href="#"><strong>Le avventure di Pinocchio</strong><span>Carlo Collodi, 1883</span></a></li>
@@ -38,6 +48,42 @@
             <li><a class="book-item" href="#"><strong>Delitto e castigo</strong><span>Fyodor Dostoevskij, 1866</span></a></li>
             <li><a class="book-item" href="#"><strong>Il deserto dei Tartari</strong><span>Dino Buzzati, 1940</span></a></li>
         </ol>
+
+        <section class="reading-section" aria-labelledby="letture-2025">
+            <h2 id="letture-2025">Letture 2025</h2>
+            <p class="section-subtitle">Voti in 5/5</p>
+            <ul class="reading-list">
+                <li><a class="reading-item" href="#"><strong>Essere artisti</strong><span class="meta">David Lynch, 2023.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Perdersi è meraviglioso</strong><span class="meta">David Lynch, 2009.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>La possibilità di un’isola</strong><span class="meta">Michel Houellebecq, 2005.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Sortilegi</strong><span class="meta">Bianca Pitzorno, 2021.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Le vie dei canti</strong><span class="meta">Bruce Chatwin, 1987.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Todo Modo</strong><span class="meta">Leonardo Sciascia, 1974.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>C’era una volta il corpo</strong><span class="meta">Walter Siti, 2024.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Uccidere il padre</strong><span class="meta">Amélie Nothomb, 2011.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>L’invenzione di Morel</strong><span class="meta">Adolfo Bioy Casares, 1940.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Né di Eva né di Adamo</strong><span class="meta">Amélie Nothomb, 2007.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Biografia della fame</strong><span class="meta">Amélie Nothomb, 2004.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Maledetti toscani</strong><span class="meta">Curzio Malaparte, 1956.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Il carteggio di Aspren</strong><span class="meta">Henry James, 1888.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Il gabbiano</strong><span class="meta">Anton Cechov, 1896.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>La casa dell’incesto</strong><span class="meta">Anais Nin, 1915.</span><span class="rating">⭐⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Mandragola</strong><span class="meta">Niccolò Machiavelli, 1524.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Pura felicità</strong><span class="meta">Katherine Mansfield.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Andando e stando</strong><span class="meta">Sibilla Aleramo, 1921.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Lire 26.900</strong><span class="meta">Frederic Beigbeder, 2000.</span><span class="rating">⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Aspettando Godot</strong><span class="meta">Samuel Beckett, 1952.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Poema a fumetti</strong><span class="meta">Dino Buzzati, 1969.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>Streghe. Storie dannate nell’arte</strong><span class="meta">Luca Scarlini, 2025.</span><span class="rating">⭐⭐</span></a></li>
+                <li><a class="reading-item" href="#"><strong>La gioia di ieri</strong><span class="meta">Elena Stancanelli, 2025.</span><span class="rating">⭐⭐</span></a></li>
+            </ul>
+        </section>
+
+        <section class="reading-section" aria-labelledby="letture-2026">
+            <h2 id="letture-2026">Letture 2026</h2>
+            <p class="section-subtitle">Voti in 5/5</p>
+            <p class="empty-state">In arrivo...</p>
+        </section>
     </main>
     <script src="menu.js"></script>
 </body>
