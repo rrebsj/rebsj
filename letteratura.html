@@ -8,26 +8,14 @@
     <style>
         :root { --sand:#cbb58f; --black:#080808; --brown:#4c3525; }
         * { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; }
         body { min-height:100vh; padding:48px 24px 72px; background:var(--sand); color:var(--black); font-family:Arial,Helvetica,sans-serif; }
         .page { width:min(100%,980px); margin:0 auto; }
         .back-link { display:inline-block; margin-bottom:52px; color:var(--black); font-weight:bold; text-decoration:none; }
-        .back-link:hover, .series-link:hover, .book-item:hover, .reading-item:hover { color:var(--sand); background:var(--brown); }
+        .back-link:hover, .literature-link:hover { color:var(--sand); background:var(--brown); }
         h1 { margin-bottom:32px; font-size:clamp(2.5rem,6vw,5rem); line-height:1; text-transform:uppercase; }
-        .series-links { display:grid; gap:16px; list-style:none; }
-        .series-link { display:block; padding:24px; border:3px solid var(--black); color:var(--black); font-size:clamp(1.5rem,4vw,2.8rem); font-weight:bold; line-height:1.05; text-decoration:none; transition:transform .18s ease, color .18s ease, background-color .18s ease; }
-        .series-link:hover { transform:translateY(-2px); }
-        .section-wrap { margin-top:40px; }
-        .section-title { margin:36px 0 16px; font-size:clamp(2rem,4vw,3rem); line-height:1.1; text-transform:uppercase; }
-        .section-title a { color:var(--black); text-decoration:none; }
-        .section-subtitle { margin-bottom:20px; font-size:clamp(1rem,2vw,1.25rem); font-weight:700; }
-        .books, .reading-list { list-style:none; display:grid; gap:16px; }
-        .book-item, .reading-item { display:block; padding:20px 24px; border:3px solid var(--black); color:var(--black); text-decoration:none; transition:transform .2s ease,background-color .2s ease,color .2s ease; }
-        .book-item:hover, .reading-item:hover { transform:translateY(-2px); }
-        .book-item strong, .reading-item strong { display:block; margin-bottom:6px; font-size:clamp(1.2rem,2.5vw,2rem); line-height:1.2; }
-        .book-item span, .reading-item .meta { font-size:clamp(1rem,1.8vw,1.2rem); line-height:1.5; }
-        .reading-item .rating { display:inline-block; margin-left:8px; font-size:clamp(1rem,1.8vw,1.15rem); }
-        .empty-state { padding:16px 20px; border:3px dashed var(--black); font-weight:700; }
+        .literature-links { display:grid; gap:16px; list-style:none; }
+        .literature-link { display:block; padding:24px; border:3px solid var(--black); color:var(--black); font-size:clamp(1.5rem,4vw,2.8rem); font-weight:bold; line-height:1.05; text-decoration:none; transition:transform .2s ease,background-color .2s ease,color .2s ease; }
+        .literature-link:hover { transform:translateY(-2px); }
         a:focus-visible { outline:4px solid white; outline-offset:5px; }
         @media (max-width:600px) { body{padding:28px 16px 48px;} .back-link{margin-bottom:38px;} }
     </style>
@@ -36,66 +24,13 @@
     <main class="page">
         <a class="back-link" href="index.html">← Torna alla home</a>
         <h1>Letteratura</h1>
-
         <nav aria-label="Sezioni di letteratura">
-            <ul class="series-links">
-                <li><a class="series-link" href="#top-10">I 10 libri che mi hanno formata</a></li>
-                <li><a class="series-link" href="#letture-2025">Letture 2025</a></li>
-                <li><a class="series-link" href="#letture-2026">Letture 2026</a></li>
+            <ul class="literature-links">
+                <li><a class="literature-link" href="libri-che-mi-hanno-formata.html">I 10 libri che mi hanno formata</a></li>
+                <li><a class="literature-link" href="letture-2025.html">Letture 2025</a></li>
+                <li><a class="literature-link" href="letture-2026.html">Letture 2026</a></li>
             </ul>
         </nav>
-
-        <section class="section-wrap" id="top-10" aria-labelledby="top-10-title">
-            <h2 class="section-title" id="top-10-title"><a href="#top-10">I 10 libri che mi hanno formata</a></h2>
-            <ol class="books" aria-label="I dieci libri che mi hanno formata">
-                <li><a class="book-item" href="#"><strong>Le avventure di Pinocchio</strong><span>Carlo Collodi, 1883</span></a></li>
-                <li><a class="book-item" href="#"><strong>L’arte della gioia</strong><span>Goliarda Sapienza, 1994</span></a></li>
-                <li><a class="book-item" href="#"><strong>Martin Eden</strong><span>Jack London, 1909</span></a></li>
-                <li><a class="book-item" href="#"><strong>Il Maestro e Margherita</strong><span>Michail Bulgakov, 1966</span></a></li>
-                <li><a class="book-item" href="#"><strong>La bestia nella giungla</strong><span>Henry James, 1903</span></a></li>
-                <li><a class="book-item" href="#"><strong>Testi segreti</strong><span>Marguerite Duras, 1987</span></a></li>
-                <li><a class="book-item" href="#"><strong>Dissipatio HG</strong><span>Guido Morselli, 1977</span></a></li>
-                <li><a class="book-item" href="#"><strong>L’isola di Arturo</strong><span>Elsa Morante, 1957</span></a></li>
-                <li><a class="book-item" href="#"><strong>Delitto e castigo</strong><span>Fyodor Dostoevskij, 1866</span></a></li>
-                <li><a class="book-item" href="#"><strong>Il deserto dei Tartari</strong><span>Dino Buzzati, 1940</span></a></li>
-            </ol>
-        </section>
-
-        <section class="section-wrap" id="letture-2025" aria-labelledby="letture-2025-title">
-            <h2 class="section-title" id="letture-2025-title"><a href="#letture-2025">Letture 2025</a></h2>
-            <p class="section-subtitle">Voti in 5/5</p>
-            <ul class="reading-list">
-                <li><a class="reading-item" href="#"><strong>Essere artisti</strong><span class="meta">David Lynch, 2023.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Perdersi è meraviglioso</strong><span class="meta">David Lynch, 2009.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>La possibilità di un’isola</strong><span class="meta">Michel Houellebecq, 2005.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Sortilegi</strong><span class="meta">Bianca Pitzorno, 2021.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Le vie dei canti</strong><span class="meta">Bruce Chatwin, 1987.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Todo Modo</strong><span class="meta">Leonardo Sciascia, 1974.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>C’era una volta il corpo</strong><span class="meta">Walter Siti, 2024.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Uccidere il padre</strong><span class="meta">Amélie Nothomb, 2011.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>L’invenzione di Morel</strong><span class="meta">Adolfo Bioy Casares, 1940.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Né di Eva né di Adamo</strong><span class="meta">Amélie Nothomb, 2007.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Biografia della fame</strong><span class="meta">Amélie Nothomb, 2004.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Maledetti toscani</strong><span class="meta">Curzio Malaparte, 1956.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Il carteggio di Aspren</strong><span class="meta">Henry James, 1888.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Il gabbiano</strong><span class="meta">Anton Cechov, 1896.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>La casa dell’incesto</strong><span class="meta">Anais Nin, 1915.</span><span class="rating">⭐⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Mandragola</strong><span class="meta">Niccolò Machiavelli, 1524.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Pura felicità</strong><span class="meta">Katherine Mansfield.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Andando e stando</strong><span class="meta">Sibilla Aleramo, 1921.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Lire 26.900</strong><span class="meta">Frederic Beigbeder, 2000.</span><span class="rating">⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Aspettando Godot</strong><span class="meta">Samuel Beckett, 1952.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Poema a fumetti</strong><span class="meta">Dino Buzzati, 1969.</span><span class="rating">⭐⭐⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>Streghe. Storie dannate nell’arte</strong><span class="meta">Luca Scarlini, 2025.</span><span class="rating">⭐⭐</span></a></li>
-                <li><a class="reading-item" href="#"><strong>La gioia di ieri</strong><span class="meta">Elena Stancanelli, 2025.</span><span class="rating">⭐⭐</span></a></li>
-            </ul>
-        </section>
-
-        <section class="section-wrap" id="letture-2026" aria-labelledby="letture-2026-title">
-            <h2 class="section-title" id="letture-2026-title"><a href="#letture-2026">Letture 2026</a></h2>
-            <p class="section-subtitle">Voti in 5/5</p>
-            <p class="empty-state">In arrivo...</p>
-        </section>
     </main>
     <script src="menu.js"></script>
 </body>
