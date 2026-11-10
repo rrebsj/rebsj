@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP 10 AL 09/2026 | Cinema</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        :root { --sand:#cbb58f; --black:#080808; --brown:#4c3525; --card:rgba(255,255,255,.12); }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { min-height:100vh; padding:48px 24px 72px; background:var(--sand); color:var(--black); font-family:Arial,Helvetica,sans-serif; }
+        .page { width:min(100%,1100px); margin:0 auto; }
+        .back-link { display:inline-block; margin-bottom:46px; color:var(--black); font-weight:bold; text-decoration:none; }
+        .back-link:hover { color:var(--brown); }
+        h1 { margin-bottom:32px; font-size:clamp(2rem,4vw,4rem); line-height:1.05; text-transform:uppercase; letter-spacing:-1px; }
+        .film-list { display:grid; gap:18px; padding-left:0; list-style:none; counter-reset:film; }
+        .film-item { display:grid; grid-template-columns:minmax(0,1fr) 180px; gap:24px; align-items:center; min-height:150px; padding:22px 24px; border:3px solid var(--black); background:var(--card); counter-increment:film; }
+        .film-item::before { content:counter(film,decimal-leading-zero); align-self:start; grid-column:1; grid-row:1; font-size:.82rem; font-weight:bold; letter-spacing:.18em; }
+        .film-info { display:grid; gap:10px; grid-column:1; grid-row:1; padding-top:24px; }
+        .film-name { font-size:clamp(1.25rem,2.5vw,2rem); font-weight:bold; line-height:1.2; }
+        .film-details { font-size:clamp(1rem,1.8vw,1.2rem); line-height:1.45; }
+        .poster { display:block; width:180px; aspect-ratio:2 / 3; border:2px solid var(--black); object-fit:cover; grid-column:2; grid-row:1; }
+        a:focus-visible { outline:4px solid white; outline-offset:5px; }
+        @media (max-width:700px) {
+            body { padding:28px 16px 48px; }
+            .back-link { margin-bottom:38px; }
+            .film-item { grid-template-columns:1fr; gap:18px; }
+            .film-info { grid-row:2; padding-top:0; }
+            .poster { grid-column:1; grid-row:3; width:min(180px,100%); }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="cinema.html">← Torna al Cinema</a>
+        <h1>TOP 10 AL 09/2026</h1>
+        <ol class="film-list" aria-label="I miei 10 film preferiti al settembre 2026">
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">Hiroshima Mon Amour</strong><span class="film-details">1959 · Alain Resnais</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3-9V-nKiPnJP9OLr8IDSvAY0ykFrizTS6ur4SyMjaTA&amp;s=10" alt="Locandina di Hiroshima Mon Amour" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">8½</strong><span class="film-details">1963 · Federico Fellini</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNt8jVEtPvlKri2mVw07XK3ovJZ8ER9id2PVPn2RkFhg&amp;s=10" alt="Locandina di 8½" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">The Shining</strong><span class="film-details">1980 · Stanley Kubrick</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZH7SqLhlSu19ZjRJLkshwg9MMB3h-ZAJBivyJ7w_0cA&amp;s=10" alt="Locandina di The Shining" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">Wild Strawberries</strong><span class="film-details">1957 · Ingmar Bergman</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEsSjzmOyYZGVd1gBG7w5ILbn9gvWsPbh4YmFpENOppQ&amp;s=10" alt="Locandina di Wild Strawberries" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">Fitzcarraldo</strong><span class="film-details">1982 · Werner Herzog</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGLglO5WdbURGsjpzIB8dsbVX21Z20XlL_i1WFNG6y_9SJbUw8xgtrjTI&amp;s=10" alt="Locandina di Fitzcarraldo" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">La Grande Abbuffata</strong><span class="film-details">1973 · Marco Ferreri</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn84ORGJL5qvoPTU_I_ubcFqRTMKSfSYFn52lUkt7h8Q&amp;s=10" alt="Locandina di La Grande Abbuffata" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">Eraserhead</strong><span class="film-details">1977 · David Lynch</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0khlLy3Iq28WBr5KWaEQil4QWXbPhSHR3Ci57d_LF6A&amp;s=10" alt="Locandina di Eraserhead" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">City Lights</strong><span class="film-details">1931 · Charlie Chaplin</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH4q0wrjIAq7Xrjnr_p0x_lhuSCGpU4mXe3MANEp9ouw&amp;s=10" alt="Locandina di City Lights" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles</strong><span class="film-details">1975 · Chantal Akerman</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSpbNtc4PIVxdMubAim04djg16cKjJogr01KomtrP5-w&amp;s=10" alt="Locandina di Jeanne Dielman, 23, quai du Commerce, 1080 Bruxelles" loading="lazy" decoding="async">
+            </li>
+            <li class="film-item">
+                <div class="film-info"><strong class="film-name">Il Sacrificio</strong><span class="film-details">1986 · Andrei Tarkovsky</span></div>
+                <img class="poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOr1EKmdbxT_ECYiIT22CBnlhqm1Lj76Jsp3kwE1SXCw&amp;s=10" alt="Locandina di Il Sacrificio" loading="lazy" decoding="async">
+            </li>
+        </ol>
+    </main>
+    <script src="menu.js"></script>
+</body>
+</html>
