@@ -15,13 +15,22 @@
     h1 { margin-bottom: 12px; font-size: clamp(2.3rem, 6vw, 4.5rem); line-height: 1; text-transform: uppercase; }
     .rating-notes { margin-bottom: 40px; font-size: 1.15rem; font-weight: bold; }
     .podcast-list { display: grid; gap: 14px; list-style: none; }
-    .podcast-list li { padding: 18px 20px; border: 3px solid var(--black); background: rgba(255,255,255,.12); font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.45; }
-    .stars { white-space: nowrap; }
-    a:focus-visible { outline: 4px solid white; outline-offset: 5px; }
+    .podcast-list li { border: 3px solid var(--black); background: rgba(255,255,255,.12); }
+    .podcast-trigger { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; border: 0; background: transparent; color: inherit; font: inherit; font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.45; text-align: left; cursor: pointer; }
+    .podcast-trigger:hover { background: rgba(255,255,255,.2); }
+    .stars { flex-shrink: 0; white-space: nowrap; }
+    a:focus-visible, button:focus-visible { outline: 4px solid white; outline-offset: 5px; }
+    .podcast-dialog { width: min( min(100% - 32px, 620px)); margin: auto; padding: 28px; border: 3px solid var(--black); background: var(--sand); color: var(--black); }
+    .podcast-dialog::backdrop { background: rgba(0,0,0,.65); }
+    .podcast-dialog h2 { margin: 0 36px 18px 0; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.2; }
+    .podcast-dialog p { line-height: 1.6; }
+    .dialog-close { float: right; padding: 6px 12px; border: 2px solid var(--black); background: transparent; color: inherit; font: inherit; font-weight: bold; cursor: pointer; }
+    .dialog-close:hover { background: rgba(255,255,255,.3); }
     @media (max-width: 600px) {
       body { padding: 28px 16px 48px; }
       .back-link { margin-bottom: 38px; }
-      .podcast-list li { padding: 15px; }
+      .podcast-trigger { padding: 15px; }
+      .podcast-dialog { padding: 22px; }
     }
   </style>
 </head>
@@ -31,41 +40,66 @@
     <h1>Podcast ascoltati / in ascolto in ordine alfabetico</h1>
     <p class="rating-notes">VOTI IN 4/4</p>
     <ul class="podcast-list">
-      <li>Apnea - Carlo Lucarelli, RaiPlay / RaiPlay Sound <span class="stars">⭐⭐⭐</span></li>
-      <li>Basaglia e i suoi - Massimo Cirri e Matteo Caccia, Il Post <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>Camposanto - Giulia Depentor <span class="stars">⭐⭐⭐</span></li>
-      <li>Ci vuole una scienza - Emanuele Mainetti, Beatrice Mautino, Il Post <span class="stars">⭐⭐⭐</span></li>
-      <li>Dee Giallo - Carlo Lucarelli, One Podcast, Radio Dee Jay <span class="stars">⭐⭐⭐</span></li>
-      <li>DOI, Denominazione di origine inventata - Alberto Grandi e Daniele Soffiatì, One Podcast <span class="stars">⭐⭐⭐</span></li>
-      <li>Dove nessuno guarda, il caso Elisa Claps - Pablo Trincia, Chora Media, Sky e Sky TG24 <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>E poi il silenzio, il disastro di Rigopiano - Pablo Trincia, Chora Media, Sky e Sky TG24 <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>Generazione - Alessandra Pellegrini De Luca, Il Post <span class="stars">⭐⭐⭐</span></li>
-      <li>Giallo in Castello - Carlo Lucarelli, Regione Emilia-Romagna, fondi FSE <span class="stars">⭐</span></li>
-      <li>I bambini di Dio - Carmine Gazzani e Flavia Piccinini, One Podcast <span class="stars">⭐⭐</span></li>
-      <li>Il banchiere di Dio - Nicolò Magnoni, Vois <span class="stars">⭐⭐</span></li>
-      <li>Il cono d'ombra, La storia di Denis Bergamini - Pablo Trincia, Sky, Sky TG24 <span class="stars">⭐⭐⭐</span></li>
-      <li>Il dito di Dio - Pablo Trincia, Spotify Studios <span class="stars">⭐⭐⭐</span></li>
-      <li>In compagnia del lupo, il cuore nero delle fiabe - Carlo Lucarelli, Sky Arte <span class="stars">⭐⭐⭐</span></li>
-      <li>Indagini - Stefano Nazzi, Il Post <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>L'invasione - Luca Misculin, Riccardo Ginevra, Il Post <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>Le ombre di via Poma, Simonetta Cesaroni un caso ancora aperto - Huffington Post <span class="stars">⭐⭐⭐</span></li>
-      <li>Mariuoli - Andrea Aimar e Emanuele Monterotti <span class="stars">⭐⭐⭐</span></li>
-      <li>Maschi - Francesco Pacifico, Il Post <span class="stars">⭐⭐⭐</span></li>
-      <li>Megalopolis, Mumbai 2050 - Pablo Trincia, Spotify Studios <span class="stars">⭐⭐</span></li>
-      <li>Meraviglia - Jacopo Veneziani, Intesa Sanpaolo e Chora Media <span class="stars">⭐</span></li>
-      <li>Musica Leggissima - Valerio Lundini, Chora e Sugar Play <span class="stars">⭐⭐</span></li>
-      <li>Paolo Conte, il maestro è nell'anima - Giulia Cavalieri, Sugar Play, Chora Media <span class="stars">⭐</span></li>
-      <li>Piacere mio, La storia del sesso - Federica Cacciola, One Podcast <span class="stars">⭐⭐⭐</span></li>
-      <li>Profondo nero - Carlo Lucarelli, Vois, Sky Crime, Crime Investigation <span class="stars">⭐⭐⭐</span></li>
-      <li>Sangue loro, il ragazzo mandato a uccidere - Pablo Trincia, Chora Media, Sky e Sky TG24 <span class="stars">⭐⭐⭐</span></li>
-      <li>Tredici - Luigi Mastrodonato, Il Post <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>Ultra Calvino - Ester Viola, Chora Media <span class="stars">⭐⭐</span></li>
-      <li>Un avvertimento prima di iniziare - Pablo Trincia, Sky Original <span class="stars">⭐</span></li>
-      <li>V come Vajont - Marco Paolini, Chora Media <span class="stars">⭐⭐</span></li>
-      <li>Veleno - Pablo Trincia, One Podcast, La Repubblica <span class="stars">⭐⭐⭐⭐</span></li>
-      <li>Wilson - Francesco Costa, Il Post <span class="stars">⭐⭐⭐</span></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Apnea - Carlo Lucarelli, RaiPlay / RaiPlay Sound <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Basaglia e i suoi - Massimo Cirri e Matteo Caccia, Il Post <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Camposanto - Giulia Depentor <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Ci vuole una scienza - Emanuele Mainetti, Beatrice Mautino, Il Post <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Dee Giallo - Carlo Lucarelli, One Podcast, Radio Dee Jay <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">DOI, Denominazione di origine inventata - Alberto Grandi e Daniele Soffiatì, One Podcast <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Dove nessuno guarda, il caso Elisa Claps - Pablo Trincia, Chora Media, Sky e Sky TG24 <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">E poi il silenzio, il disastro di Rigopiano - Pablo Trincia, Chora Media, Sky e Sky TG24 <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Generazione - Alessandra Pellegrini De Luca, Il Post <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Giallo in Castello - Carlo Lucarelli, Regione Emilia-Romagna, fondi FSE <span class="stars">⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">I bambini di Dio - Carmine Gazzani e Flavia Piccinini, One Podcast <span class="stars">⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Il banchiere di Dio - Nicolò Magnoni, Vois <span class="stars">⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Il cono d'ombra, La storia di Denis Bergamini - Pablo Trincia, Sky, Sky TG24 <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Il dito di Dio - Pablo Trincia, Spotify Studios <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">In compagnia del lupo, il cuore nero delle fiabe - Carlo Lucarelli, Sky Arte <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Indagini - Stefano Nazzi, Il Post <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">L'invasione - Luca Misculin, Riccardo Ginevra, Il Post <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Le ombre di via Poma, Simonetta Cesaroni un caso ancora aperto - Huffington Post <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Mariuoli - Andrea Aimar e Emanuele Monterotti <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Maschi - Francesco Pacifico, Il Post <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Megalopolis, Mumbai 2050 - Pablo Trincia, Spotify Studios <span class="stars">⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Meraviglia - Jacopo Veneziani, Intesa Sanpaolo e Chora Media <span class="stars">⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Musica Leggissima - Valerio Lundini, Chora e Sugar Play <span class="stars">⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Paolo Conte, il maestro è nell'anima - Giulia Cavalieri, Sugar Play, Chora Media <span class="stars">⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Piacere mio, La storia del sesso - Federica Cacciola, One Podcast <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Profondo nero - Carlo Lucarelli, Vois, Sky Crime, Crime Investigation <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Sangue loro, il ragazzo mandato a uccidere - Pablo Trincia, Chora Media, Sky e Sky TG24 <span class="stars">⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Tredici - Luigi Mastrodonato, Il Post <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Ultra Calvino - Ester Viola, Chora Media <span class="stars">⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Un avvertimento prima di iniziare - Pablo Trincia, Sky Original <span class="stars">⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">V come Vajont - Marco Paolini, Chora Media <span class="stars">⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Veleno - Pablo Trincia, One Podcast, La Repubblica <span class="stars">⭐⭐⭐⭐</span></button></li>
+      <li><button class="podcast-trigger" type="button" data-description="Descrizione da aggiungere.">Wilson - Francesco Costa, Il Post <span class="stars">⭐⭐⭐</span></button></li>
     </ul>
   </main>
+
+  <dialog class="podcast-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Chiudi finestra">Chiudi</button>
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-description"></p>
+  </dialog>
+
+  <script>
+    const podcastDialog = document.querySelector('.podcast-dialog');
+    const dialogTitle = document.querySelector('#dialog-title');
+    const dialogDescription = document.querySelector('#dialog-description');
+
+    document.querySelectorAll('.podcast-trigger').forEach((button) => {
+      button.addEventListener('click', () => {
+        dialogTitle.textContent = button.textContent.trim();
+        dialogDescription.textContent = button.dataset.description;
+        podcastDialog.showModal();
+      });
+    });
+
+    document.querySelector('.dialog-close').addEventListener('click', () => podcastDialog.close());
+    podcastDialog.addEventListener('click', (event) => {
+      if (event.target === podcastDialog) podcastDialog.close();
+    });
+  </script>
   <script src="menu.js"></script>
 </body>
 </html>
