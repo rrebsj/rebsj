@@ -12,14 +12,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: .45rem;
     color: var(--black);
-    font-size: clamp(3rem, 2vw + 2.2rem, 4rem);
+    font-size: 1rem;
+    font-weight: 600;
     line-height: 1;
     text-decoration: none;
     transition: transform .2s ease;
 }
 
-.site-home-link:hover { transform: scale(1.12); }
+.site-home-icon {
+    font-size: 1.4rem;
+}
+
+.site-home-link:hover { transform: scale(1.06); }
 
 .site-menu-button {
     position: fixed;
@@ -59,6 +65,7 @@
 @media (max-width:1100px) { .site-menu-button { top:30px; right:35px; } }
 @media (max-width:680px) {
     .site-home-link { top:20px; left:20px; }
+    .site-home-icon { font-size:1.2rem; }
     .site-menu-button { top:24px; right:24px; width:48px; height:38px; }
     .site-menu-button span { width:48px; height:4px; margin-bottom:13px; }
     .site-menu-button.is-open span:first-child { transform:translateY(17px) rotate(45deg); }
